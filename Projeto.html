@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/Grafic.css">
+  <script src="JavaScript/Libraries/jquery-3.4.1.js"></script>
+  <script src="JavaScript/Libraries/HighCharts/highcharts.js"></script>
+  <script src="JavaScript/Libraries/HighCharts/Modules/series-label.js"></script>
+  <script src="JavaScript/Libraries/HighCharts/Modules/exporting.js"></script>
+  <script src="JavaScript/Libraries/HighCharts/Modules/export-data.js"></script>
+  <script src="JavaScript/GraficScript.js"></script>
+  <script src="JavaScript/script.js" async></script>
+
+  <title>projeto de CompGráfica</title>
+</head>
+
+<body>
+  <div id="fullHeader">
+    <h1 id="Header">Calculadora de Transformador<br><\CompGráfica></h1>
+    <h2>Universidade Santa Cecília</h2>
+    <h3 id="nome.RA">Rodrigo Patricio: 123472<br>Matheus Wintruff: 148632</h3>
+  </div>
+  <div id="conteudo">
+    <div id="formulario">
+      <p id="info">Informacoes do Transformador:</p>
+      <div id="Configs">
+        <select name="Ligacao do trafo" id="trafoSelect">
+          <option value="0">Selecione o tipo de Ligação</option>
+          <option value="DD">Delta - Delta</option>
+          <option value="DE">Delta - Estrela</option>
+          <option value="EE">Estrela - Estrela</option>
+          <option value="ED">Estrela - Delta</option>
+        </select>
+        <input type="checkbox" id="RTCheck" value="RTSelected">
+        <input type="number" name="RT" id="RT" placeholder="RT" disabled>
+      </div>
+      <div id="dadosPrincipais">
+        <label id="tensoes">Tensoes:</label>
+        <input type="number" name="entrada" id="entrada" placeholder="Primario" class="tensoesDeEntrada">
+        <input type="number" name="saida" id="saida" placeholder="Secundario" class="tensoesDeEntrada">
+      </div>
+      <div id="btnCalculo">
+        <input type="button" value="Calcular" id="btn" >
+        <input type="button" value="Resetar" id="btnReset" >
+      </div>
+    </div>
+    <div id="Images">
+      <img src="" id="trafoImage">
+    </div>
+  </div>
+  <div id="result">
+    <Label class="resultIndentify">Primario: (
+      <label>Tensao de linha: <input type="number" class="tensoesDoTrafo" readonly id="VF1"> Volts</label>
+      <label>Tensao de fase: <input type="number" class="tensoesDoTrafo" readonlyid="VL1"> Volts</label>
+    )</Label>
+    <Label class="resultIndentify">Secundario: (
+        <label>Tensao de linha: <input type="number" class="tensoesDoTrafo" readonly id="VF2"> Volts</label>
+        <label>Tensao de fase: <input type="number" class="tensoesDoTrafo" readonly id="VL2"> Volts</label>
+      )</Label>
+      <Label class="resultIndentify">Retificado: (
+          <label>Tensao Na Carga: <input type="number" class="tensoesDoTrafo" readonlyid="VCarga"> Volts</label>
+        )</Label>
+  </div>
+  <div id="Grafic"></div>
+</body>
+
+</html>
