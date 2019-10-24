@@ -19,28 +19,28 @@ function ImageChenger(){
   var src = "";
   switch(tipo.val()){
     case "DD":
-      src = "images/DD.jpg";
+      src = "Images/DD.JPG";
       break;
     case "DE":
-      src = "images/DE.jpg";
+      src = "Images/DE.JPG";
       break;
     case "ED":
-      src = "images/ED.jpg";
+      src = "Images/ED.JPG";
       break;
     case "EE":
-      src = "images/EE.jpg";
-      break;  
+      src = "Images/EE.JPG";
+      break;
   }
   image.attr("src", src);
 }
 
 //#endregion
-//#region validation
+//#region validation TxtB
 
 function validate() {
   "use strict";
   var msg = "Preencha a tensão de entrada/saída e RT ou as tensões de entrada e saída";
-  inputs[1].value != "" && inputs[2].value != "" ? Calcula_RT_Entrada() : 
+  inputs[1].value != "" && inputs[2].value != "" ? Calcula_RT_Entrada() :
   inputs[1].value != "" && inputs[3].value != "" ? Calcula_RT_Entrada() :
   inputs[2].value != "" && inputs[3].value != "" ? Calcula_RT_Entrada() :
   inputs[2].value != "" && inputs[3].value != "" ? Calcula_RT_Entrada() : window.alert(msg);
@@ -71,7 +71,7 @@ function Calcula_RT_Entrada() {
     case 'ED': CalculoED();
       AfterCacl();
       break;
-    case "none": window.alert("Selecione o tipo de tranformador"); 
+    case "none": window.alert("Selecione o tipo de tranformador");
       break;
   }
 }
@@ -184,4 +184,4 @@ function CalculoED() {
   PlotGrafic(parseInt(inputs[9].value));
   inputs[10].value = (((Math.sqrt(2)*inputs[8].value)-1.4)*0.955);
 }
-//#endregion  
+//#endregion
